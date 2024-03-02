@@ -1,31 +1,36 @@
 
 import Typography from "@mui/material/Typography";
+import { useStyles } from "tss-react";
 
 type Props = {
-    style?: React.CSSProperties;
+    className?: string;
 };
 
 export function Account(
     props: Props
-){
+) {
 
-    const { style } = props;
+    const { className } = props;
+
+    const { css, cx } = useStyles();
 
     return (
         <div
-            style={{
-                "display": "flex",
-                "flex": 1,
-                "justifyContent": "center",
-                "alignItems": "center",
-                "height": "100%",
-                ...style
-            }}
+            className={cx(
+                css({
+                    "display": "flex",
+                    "flex": 1,
+                    "justifyContent": "center",
+                    "alignItems": "center",
+                    "height": "100%",
+                }),
+                className
+            )}
         >
             <div>
-            <Typography variant="body1">
-                Your account
-            </Typography>
+                <Typography variant="body1">
+                    Your account
+                </Typography>
             </div>
         </div>
     );
