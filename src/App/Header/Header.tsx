@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import LoginIcon from '@mui/icons-material/Login';
 import { useStyles } from "tss-react/mui";
 import { useState } from "react";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type Props = {
     className?: string;
@@ -44,6 +45,11 @@ export function Header(props: Props) {
                 Facebook {hoverCount}
             </Typography>
             <div className={css({ "flex": 1 })} />
+            <LanguageSwitcher
+                className={css({
+                    "marginRight": theme.spacing(2)
+                })}
+            />
             <Button
                 variant="contained"
                 endIcon={<LoginIcon />}

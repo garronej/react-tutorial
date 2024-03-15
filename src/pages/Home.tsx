@@ -1,7 +1,8 @@
 
 import Typography from "@mui/material/Typography";
-import { useStyles } from "tss-react";
+import { useStyles } from "tss-react/mui";
 import logoWepUrl from "assets/logo.webp";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 type Props = {
     className?: string;
@@ -13,7 +14,9 @@ export function Home(
 
     const { className } = props;
 
-    const { css, cx } = useStyles();
+    const { css, cx, theme } = useStyles();
+
+    const { t } = useTranslation({ Home });
 
     return (
         <div
@@ -31,15 +34,16 @@ export function Home(
         >
             <div>
                 <Typography variant="h1">
-                    Facebook
+                    {t("title")}
                 </Typography>
                 <Typography variant="h5">
-                    Welcome to this Facebook clone
+                    {t("welcome", { "date": new Date() })}
                 </Typography>
                 <img
                     className={css({
-                        width: 200,
-                        height: 200,
+                        "marginTop": theme.spacing(4),
+                        "width": 200,
+                        "height": 200,
                     })}
                     src={logoWepUrl}
                 />
@@ -48,3 +52,12 @@ export function Home(
     );
 
 }
+
+export const { i18n } = declareComponentKeys<
+    | "title"
+    | {
+        K: "welcome";
+        P: { date: Date; };
+        R: JSX.Element;
+    }
+>()({ Home });

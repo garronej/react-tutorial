@@ -1,6 +1,7 @@
 
 import { tss } from "tss-react/mui";
 import { CustomButton } from "./CustomButton";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 type Props = {
     className?: string;
@@ -13,6 +14,8 @@ export function LeftBar(props: Props) {
     const { className, page, onPageChange } = props;
 
     const { classes, cx } = useStyles();
+
+    const { t } = useTranslation({ LeftBar });
 
     return (
         <div className={cx(classes.root, className)} >
@@ -27,7 +30,7 @@ export function LeftBar(props: Props) {
                             console.log(`Mouse enter sur ${page_i}`);
                         }}
                     >
-                        {page_i}
+                        {t(page_i)}
                     </CustomButton>
                 ))
             }
@@ -35,6 +38,11 @@ export function LeftBar(props: Props) {
     );
 
 }
+
+export const { i18n } = declareComponentKeys<
+    "home" | "blog" | "account"
+>()({ LeftBar });
+
 
 const useStyles = tss.create(({ theme }) => ({
     "root": {

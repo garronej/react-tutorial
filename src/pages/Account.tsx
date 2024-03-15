@@ -3,6 +3,8 @@ import Typography from "@mui/material/Typography";
 import { tss } from "tss-react/mui";
 import Button from "@mui/material/Button";
 import { useDomRect } from "powerhooks/useDomRect";
+import { declareComponentKeys } from "i18nifty";
+import { useTranslation } from "i18n";
 
 type Props = {
     className?: string;
@@ -15,7 +17,6 @@ export function Account(
 
     const { className, onNavigateToHome } = props;
 
-
     const { ref: titleRef, domRect: { width: titleWidth, height: titleHeight } } = useDomRect();
 
     const { classes, cx } = useStyles({
@@ -23,6 +24,7 @@ export function Account(
         titleHeight
     });
 
+    const { t } = useTranslation({ Account });
 
     return (
         <div className={cx(classes.root, className)} >
@@ -30,16 +32,16 @@ export function Account(
                 <Typography
                     ref={titleRef}
                     className={classes.title}
-                    variant="h1"
+                    variant="h4"
                 >
-                    Your account !!!!!!!!!!!!!
+                    {t("your account")}
                 </Typography>
                 <div className={classes.dynamicDiv} />
 
                 <Button
                     onClick={() => onNavigateToHome()}
                 >
-                    Navigate to home
+                    {t("navigate to home")}
                 </Button>
                 <div className={classes.bottomDiv} />
             </div>
@@ -78,3 +80,8 @@ const useStyles = tss
             "backgroundColor": "blue",
         }
     }));
+
+export const { i18n } = declareComponentKeys<
+    | "your account"
+    | "navigate to home"
+>()({ Account });

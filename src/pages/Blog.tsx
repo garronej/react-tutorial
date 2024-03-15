@@ -1,6 +1,7 @@
 
 import Typography from "@mui/material/Typography";
 import { useStyles } from "tss-react";
+import { declareComponentKeys, useTranslation } from "i18n";
 
 type Props = {
     className?: string;
@@ -13,6 +14,8 @@ export function Blog(
     const { className } = props;
 
     const { css, cx } = useStyles();
+
+    const { t } = useTranslation({ Blog });
 
     return (
         <div
@@ -29,10 +32,14 @@ export function Blog(
         >
             <div>
                 <Typography variant="body1">
-                    Blog !!!!
+                    {t("blog")}
                 </Typography>
             </div>
         </div>
     );
 
 }
+
+export const { i18n } = declareComponentKeys<
+    "blog"
+>()({ Blog });
