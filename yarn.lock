@@ -4075,6 +4075,11 @@ eslint-plugin-storybook@^0.8.0:
     requireindex "^1.2.0"
     ts-dedent "^2.2.0"
 
+eslint-plugin-tss-unused-classes@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tss-unused-classes/-/eslint-plugin-tss-unused-classes-1.0.2.tgz#d4bc6ca40c1748bea1aaf3bc48271b96d7a1cd77"
+  integrity sha512-9Fs8Qs7G3cDAOBKqVhPw64Q/qRHeglu0Bm30OGWr+0Nd/2dRMD3zV5g65X/k2Y54aPvP7yVYjIl6Ql+o284ttA==
+
 eslint-scope@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-5.1.1.tgz#e786e59a66cb92b3f6c1fb0d508aab174848f48c"
