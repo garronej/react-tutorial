@@ -1,6 +1,7 @@
 
 import Typography from "@mui/material/Typography";
 import { useStyles } from "tss-react";
+import logoWepUrl from "assets/logo.webp";
 
 type Props = {
     className?: string;
@@ -35,6 +36,13 @@ export function Home(
                 <Typography variant="h5">
                     Welcome to this Facebook clone
                 </Typography>
+                <img
+                    className={css({
+                        width: 200,
+                        height: 200,
+                    })}
+                    src={logoWepUrl}
+                />
             </div>
         </div>
     );
