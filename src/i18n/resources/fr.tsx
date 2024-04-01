@@ -2,6 +2,10 @@ import type { Translations } from '../types';
 
 export const translations: Translations<"fr"> = {
     /* spell-checker: disable */
+    "App": {
+        "ok": "OK",
+        "cancel": "Cancel",
+    },
     "Account": {
         "navigate to home": "Naviguer vers l'accueil",
         "your account": "Votre compte",

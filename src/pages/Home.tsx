@@ -17,6 +17,7 @@ export function Home(
     const { css, cx, theme } = useStyles();
 
     const { t } = useTranslation({ Home });
+    const { t: tc } = useTranslation("App");
 
     return (
         <div
@@ -34,7 +35,7 @@ export function Home(
         >
             <div>
                 <Typography variant="h1">
-                    {t("title")}
+                    {t("title")} {tc("ok")}
                 </Typography>
                 <Typography variant="h5">
                     {t("welcome", { "date": new Date() })}

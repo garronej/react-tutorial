@@ -1,6 +1,10 @@
 import type { Translations } from '../types';
 
 export const translations: Translations<"en"> = {
+    "App": {
+        "ok": "OK",
+        "cancel": "Cancel",
+    },
     "Account": {
         "navigate to home": "Navigate to home",
         "your account": "Your account",

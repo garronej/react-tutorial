@@ -12,6 +12,7 @@ export const fallbackLanguage = "en";
 export type Language = typeof languages[number];
 
 export type ComponentKey =
+	| typeof import('App').i18n
 	| typeof import('pages/Account').i18n
 	| typeof import('pages/Blog').i18n
 	| typeof import('pages/Home').i18n

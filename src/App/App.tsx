@@ -7,6 +7,7 @@ import { Home } from "pages/Home";
 import { Account } from "pages/Account";
 import { Blog } from "pages/Blog";
 import { useStyles, GlobalStyles } from "tss-react";
+import { declareComponentKeys } from "i18n";
 
 
 export function App() {
@@ -83,3 +84,8 @@ export function App() {
     )
 
 }
+
+export const { i18n } = declareComponentKeys<
+    | "ok"
+    | "cancel"
+>()({ App });
